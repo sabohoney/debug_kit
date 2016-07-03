@@ -9,10 +9,10 @@ class DebugKitControllerEventListener extends BcControllerEventListener {
         // サンプルヘルパーをコントローラーに追加
         $Controller = $event->subject();
         if ($Controller->Components->enabled('BcAuth')) {
-    		$user = $Controller->BcAuth->user();
-    		if ($user) {
-    			$Controller->Toolbar = $Controller->Components->load('DebugKit.Toolbar');
-    		}
-		}
+            $user = $Controller->BcAuth->user();
+            if ($user) {
+                $Controller->Toolbar = $Controller->Components->load('DebugKit.Toolbar');
+            }
+        }
     }
 }
