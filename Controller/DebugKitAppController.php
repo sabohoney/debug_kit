@@ -20,5 +20,5 @@ App::uses('BcPluginAppController', 'Controller');
  * @since         DebugKit 0.1
  */
 class DebugKitAppController extends BcPluginAppController {
-
+    public $components = ['BcAuth'];
 }
