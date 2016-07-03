@@ -8,9 +8,11 @@ class DebugKitControllerEventListener extends BcControllerEventListener {
     public function initialize(CakeEvent $event) {
         // サンプルヘルパーをコントローラーに追加
         $Controller = $event->subject();
-		$user = $Controller->BcAuth->user();
-		if ($user) {
-			$Controller->Toolbar = $Controller->Components->load('DebugKit.Toolbar');
+        if ($Controller->Components->enabled('BcAuth')) {
+    		$user = $Controller->BcAuth->user();
+    		if ($user) {
+    			$Controller->Toolbar = $Controller->Components->load('DebugKit.Toolbar');
+    		}
 		}
     }
 }
